@@ -1,0 +1,6 @@
+C:\Users\Radim\source\repos\hw4\ClassLibraryArray\bin\Debug\ClassLibraryArray.dll
+C:\Users\Radim\source\repos\hw4\ClassLibraryArray\bin\Debug\ClassLibraryArray.pdb
+C:\Users\Radim\source\repos\hw4\ClassLibraryArray\obj\Debug\ClassLibraryArray.csproj.AssemblyReference.cache
+C:\Users\Radim\source\repos\hw4\ClassLibraryArray\obj\Debug\ClassLibraryArray.csproj.CoreCompileInputs.cache
+C:\Users\Radim\source\repos\hw4\ClassLibraryArray\obj\Debug\ClassLibraryArray.dll
+C:\Users\Radim\source\repos\hw4\ClassLibraryArray\obj\Debug\ClassLibraryArray.pdb

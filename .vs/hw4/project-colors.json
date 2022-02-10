@@ -1,0 +1,51 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "5a56fec8-9169-4da3-97f5-8773616e1861": {
+      "ProjectGuid": "5a56fec8-9169-4da3-97f5-8773616e1861",
+      "DisplayName": "hw4",
+      "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Прочие файлы",
+      "ColorIndex": -1
+    },
+    "8ed2583e-f624-4bf8-ade6-1837c5ec9bd8": {
+      "ProjectGuid": "8ed2583e-f624-4bf8-ade6-1837c5ec9bd8",
+      "DisplayName": "ClassLibraryArray",
+      "ColorIndex": 1
+    },
+    "1e783670-1f28-4465-bc5f-ca0c11e10d78": {
+      "ProjectGuid": "1e783670-1f28-4465-bc5f-ca0c11e10d78",
+      "DisplayName": "task1",
+      "ColorIndex": 2
+    },
+    "67d951f7-9570-4334-b9ec-4d138a696f8b": {
+      "ProjectGuid": "67d951f7-9570-4334-b9ec-4d138a696f8b",
+      "DisplayName": "task2",
+      "ColorIndex": 3
+    },
+    "ac67bd8d-1293-4b98-a296-793c83f940b1": {
+      "ProjectGuid": "ac67bd8d-1293-4b98-a296-793c83f940b1",
+      "DisplayName": "task3",
+      "ColorIndex": 4
+    },
+    "0abf7939-452f-4ba9-97c8-5c335e22fb02": {
+      "ProjectGuid": "0abf7939-452f-4ba9-97c8-5c335e22fb02",
+      "DisplayName": "task4",
+      "ColorIndex": 5
+    },
+    "1ec7afc1-0a0a-4ded-8fbb-6bd0fea12dcd": {
+      "ProjectGuid": "1ec7afc1-0a0a-4ded-8fbb-6bd0fea12dcd",
+      "DisplayName": "task5",
+      "ColorIndex": 6
+    },
+    "ffc30fec-7bb2-489f-b4dc-786e4f6f67e2": {
+      "ProjectGuid": "ffc30fec-7bb2-489f-b4dc-786e4f6f67e2",
+      "DisplayName": "TwoDimensionalArray",
+      "ColorIndex": 7
+    }
+  },
+  "NextColorIndex": 8
+}
