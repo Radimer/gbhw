@@ -1,8 +1,0 @@
-C:\Users\Radim\source\repos\hw4\task4\bin\Debug\task4.exe.config
-C:\Users\Radim\source\repos\hw4\task4\bin\Debug\task4.exe
-C:\Users\Radim\source\repos\hw4\task4\bin\Debug\task4.pdb
-C:\Users\Radim\source\repos\hw4\task4\obj\Debug\task4.csproj.AssemblyReference.cache
-C:\Users\Radim\source\repos\hw4\task4\obj\Debug\task4.csproj.SuggestedBindingRedirects.cache
-C:\Users\Radim\source\repos\hw4\task4\obj\Debug\task4.csproj.CoreCompileInputs.cache
-C:\Users\Radim\source\repos\hw4\task4\obj\Debug\task4.exe
-C:\Users\Radim\source\repos\hw4\task4\obj\Debug\task4.pdb

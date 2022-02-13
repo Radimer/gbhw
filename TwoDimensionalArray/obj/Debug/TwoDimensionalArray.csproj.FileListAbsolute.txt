@@ -1,6 +1,0 @@
-C:\Users\Radim\source\repos\hw4\TwoDimensionalArray\bin\Debug\TwoDimensionalArray.dll
-C:\Users\Radim\source\repos\hw4\TwoDimensionalArray\bin\Debug\TwoDimensionalArray.pdb
-C:\Users\Radim\source\repos\hw4\TwoDimensionalArray\obj\Debug\TwoDimensionalArray.csproj.CoreCompileInputs.cache
-C:\Users\Radim\source\repos\hw4\TwoDimensionalArray\obj\Debug\TwoDimensionalArray.dll
-C:\Users\Radim\source\repos\hw4\TwoDimensionalArray\obj\Debug\TwoDimensionalArray.pdb
-C:\Users\Radim\source\repos\hw4\TwoDimensionalArray\obj\Debug\TwoDimensionalArray.csproj.AssemblyReference.cache
