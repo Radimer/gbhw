@@ -1,157 +1,180 @@
-﻿/*
-Евдокимов Семён Петрович
-2. Разработать статический класс Message, содержащий следующие статические методы для обработки текста:
-а) Вывести только те слова сообщения, которые содержат не более n букв.
-б) Удалить из сообщения все слова, которые заканчиваются на заданный символ.
-в) Найти самое длинное слово сообщения.
-г) Сформировать строку с помощью StringBuilder из самых длинных слов сообщения.
-д) ***Создать метод, который производит частотный анализ текста. В качестве параметра в него передается массив слов и текст, в качестве результата метод возвращает сколько раз каждое из слов массива входит в этот текст. Здесь требуется использовать класс Dictionary. 
-*/
+﻿using System;
+using System.IO;
+using System.Text.RegularExpressions;
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace task2
+namespace DoubleBinary
 {
-
-    static class Message
+    class Program
     {
-        static public string WordLengthLessNum(string message, int n)
-        {
-            string[] words = message.Split(' ');
-            for(int i = 0; i < words.Length; i++)
-            {
-                if (words[i].Length > n) words[i] = null;
-            }
-            words = words.Where(word => word != null).ToArray();
-            return string.Join(" ", words);
-        }
-
-        static public string DelWordIfEndingChar(string message, string c)
-        {
-            string[] words = message.Split(' ');
-            for (int i = 0; i < words.Length; i++)
-            {
-                if (words[i].Substring(words[i].Length - 1) == c) words[i] = null;
-            }
-            words = words.Where(word => word != null).ToArray();
-            return string.Join(" ", words);
-        }
-
-        static public string FirstLongestWord(string message)
-        {
-            string[] words = message.Split(' ');
-            int length = 0;
-            int n = 0;
-            for (int i = 0; i < words.Length; i++)
-            {
-                if (words[i].Length > length)
-                {
-                    length = words[i].Length;
-                    n = i;
-                }
-            }
-            return words[n];
-        }
-
-        static public string LongestWords(string message)
-        {
-            string[] words = message.Split(' ');
-            int length = 0;
-            for (int i = 0; i < words.Length; i++)
-            {
-                if (words[i].Length > length) length = words[i].Length;
-            }
-            words = words.Where(word => word.Length == length).ToArray();
-            return string.Join(" ", words);
-        }
-
-        static public string LongestWordsStringBuilder(string message)
-        {
-            StringBuilder sb  = new StringBuilder("");
-            string[] words = message.Split(' ');
-            int length = 0;
-            for (int i = 0; i < words.Length; i++)
-            {
-                if (words[i].Length > length) length = words[i].Length;
-            }
-            words = words.Where(word => word.Length == length).ToArray();
-            foreach (string word in words)
-            {
-                sb.Append(word);
-                sb.Append(" ");
-            }
-            return string.Join(" ", words);
-        }
+        public delegate double Fun(double x);
         
-        static public string Frequence(string[] message, string text)
+        public static double Sin(double x)
         {
-            Dictionary<string, int> wordCount = new Dictionary<string, int>();
-            string[] source = text.Split(new char[] { '.', '?', '!', ' ', ';', ':', ',' }, StringSplitOptions.RemoveEmptyEntries);
-
-            foreach (string word in message)
-            {
-                int count = 0;
-                foreach (string word2 in source)
-                    if (word.ToLowerInvariant() == word2.ToLowerInvariant()) count++;
-
-                wordCount.Add(word, count);
-            }
-            string output = "";
-
-            foreach (KeyValuePair<string, int> kv in wordCount)
-                output = output + " " + kv.Key.ToString() + ":" + kv.Value.ToString();
-            return output;
+            return Math.Sin(x);
         }
-        
+        public static double Cos(double x)
+        {
+            return Math.Cos(x);
+        }
+        public static double Tan(double x)
+        {
+            return Math.Tan(x);
+        }
+        public static double Ctan(double x)
+        {
+            return 1/Math.Tan(x);
+        }
+        public static double Ln(double x)
+        {
+            return 1 / Math.Log(x);
+        }
+        public static double Extend(double x)
+        {
+            return 1 / Math.Exp(x);
+        }
+        public static double F1(double x)
+        {
+            return x * x - 50 * x + 10;
+        }
 
-    }
-    internal class Program
-    {
+        public static double F2(double x)
+        {
+            return x * x * x + x * x;
+        }
+
+        public static double F3(double x)
+        {
+            return -x * -x * -x * -x;
+        }
+
+        public static void SaveFunc(string fileName, Fun F, double a, double b, double h)
+        {
+            FileStream fs = new FileStream(fileName, FileMode.Create, FileAccess.Write);
+            BinaryWriter bw = new BinaryWriter(fs);
+ 
+            double x = a;
+            
+            while (x <= b)
+            {
+                bw.Write(F(x));
+                x += h;
+            }
+
+            bw.Close();
+            fs.Close();
+        }
+        public static double[] Load(string fileName, out double min)
+        {
+            FileStream fs = new FileStream(fileName, FileMode.Open, FileAccess.Read);
+            BinaryReader bw = new BinaryReader(fs);
+            min = double.MaxValue;
+            double[] ReadValues = new double[fs.Length / sizeof(double)];
+            double d;
+            for (int i = 0; i < fs.Length / sizeof(double); i++)
+            {
+                // Считываем значение и переходим к следующему
+                d = bw.ReadDouble();
+                ReadValues[i] = d;
+                if (d < min) min = d;
+            }
+            bw.Close();
+            fs.Close();
+            return ReadValues;
+        }
         static void Main(string[] args)
         {
-            /*
-            Console.Title = "Статический класс для обработки сообщений";
-            Console.WriteLine("Введите сообщение");
-            string insertString1 = Console.ReadLine();
-            Console.WriteLine("Введите максимальное число букв в слове");
-            int n = int.Parse(Console.ReadLine());
-            Console.WriteLine(Message.WordLengthLessNum(insertString1, n));
-            Console.ReadLine();
-            */
+            Regex regex = new Regex(@"^[1-9]");
+            int func;
+            double minSection, maxSection,x,h,min;
+            while (true)
+            {
+                Console.WriteLine("Выберите функцию из нижеуказанных");
+                Console.WriteLine("1. Sin(x)");
+                Console.WriteLine("2. Cos(x)");
+                Console.WriteLine("3. Tan(x)");
+                Console.WriteLine("4. Ctan(x)");
+                Console.WriteLine("5. Ln(x)");
+                Console.WriteLine("6. Exp(x)");
+                Console.WriteLine("7. x^2-50*x+10");
+                Console.WriteLine("8. x^3+x^2");
+                Console.WriteLine("9. -x^4");
 
-            /*
-            Console.WriteLine("Введите сообщение");
-            string insertString2 = Console.ReadLine();
-            Console.WriteLine("Введите символ на который оканчивается слово");
-            string c = Console.ReadLine();
-            Console.WriteLine(Message.DelWordIfEndingChar(insertString2, c));
-            Console.ReadLine();
-            */
+                string selectFunction = Console.ReadLine();
+                Console.Clear();
+                if (regex.IsMatch(selectFunction))
+                {
+                    func = int.Parse(selectFunction);
+                    break;
+                }
+                else Console.WriteLine("Введите корректную цифру");
+            }
 
-            /*
-            Console.WriteLine("Введите сообщение");
-            string insertString3 = Console.ReadLine();
-            Console.WriteLine(Message.LongestWord(insertString3));
-            Console.ReadLine();
-            */
+            while (true)
+            {
+                Console.WriteLine("Введите через пробел отрезок на котором искать минимум функции");
+                string[] section = Console.ReadLine().Split(' ');
+                Console.Clear();
+                if (double.TryParse(section[0],out minSection)==true && double.TryParse(section[1], out maxSection) == true) break;
+                else Console.WriteLine("Введите корректный отрезок");
+            }
 
-            /*
-            Console.WriteLine("Введите сообщение");
-            string insertString4 = Console.ReadLine();
-            Console.WriteLine(Message.LongestWordsStringBuilder(insertString4));
-            Console.ReadLine();
-            */
+            while (true)
+            {
+                Console.WriteLine("Введите x");
+                if (double.TryParse(Console.ReadLine(), out x)) break;
+                else
+                {
+                    Console.Clear();
+                    Console.WriteLine("Введите корректный х");
+                }
+            }
+            Console.Clear();
+            while (true)
+            {
+                Console.WriteLine("Введите шаг");
+                if (double.TryParse(Console.ReadLine(), out h)) break;
+                else
+                {
+                    Console.Clear();
+                    Console.WriteLine("Введите корректный шаг");
+                }
+            }
+            Console.Clear();
 
-            Console.WriteLine("Введите слова для поиска через пробел");
-            string[] insertString5 = Console.ReadLine().Split(' ');
-            Console.WriteLine("Введите тескст");
-            string text = Console.ReadLine();
-            Console.WriteLine(Message.Frequence(insertString5, text));
-            Console.ReadLine();
+            switch (func)
+            {
+                case 1:
+                    SaveFunc("data.bin", new Fun(Sin), minSection, maxSection, h);
+                    break;
+                case 2:
+                    SaveFunc("data.bin", new Fun(Cos), minSection, maxSection, h);
+                    break;
+                case 3:
+                    SaveFunc("data.bin", new Fun(Tan), minSection, maxSection, h);
+                    break;
+                case 4:
+                    SaveFunc("data.bin", new Fun(Ctan), minSection, maxSection, h);
+                    break;
+                case 5:
+                    SaveFunc("data.bin", new Fun(Ln), minSection, maxSection, h);
+                    break;
+                case 6:
+                    SaveFunc("data.bin", new Fun(Extend), minSection, maxSection, h);
+                    break;
+                case 7:
+                    SaveFunc("data.bin", new Fun(F1), minSection, maxSection, h);
+                    break;
+                case 8:
+                    SaveFunc("data.bin", new Fun(F2), minSection, maxSection, h);
+                    break;
+                case 9:
+                    SaveFunc("data.bin", new Fun(F3), minSection, maxSection, h);
+                    break;
+            }
+            Console.WriteLine($"Значения функции на отрезке от {minSection} до {maxSection} с шагом {h}\n");
+            foreach (double val in Load("data.bin", out min)) Console.WriteLine(val);
+            Console.WriteLine($"\nМинимум функции на отрезке от {minSection} до {maxSection} равен {min}");
+            Console.ReadKey();
         }
     }
 }

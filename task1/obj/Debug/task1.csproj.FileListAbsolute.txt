@@ -1,7 +1,8 @@
-C:\Users\Radim\source\repos\hw5\task1\bin\Debug\task1.exe.config
-C:\Users\Radim\source\repos\hw5\task1\bin\Debug\task1.exe
-C:\Users\Radim\source\repos\hw5\task1\bin\Debug\task1.pdb
-C:\Users\Radim\source\repos\hw5\task1\obj\Debug\task1.csproj.SuggestedBindingRedirects.cache
-C:\Users\Radim\source\repos\hw5\task1\obj\Debug\task1.csproj.CoreCompileInputs.cache
-C:\Users\Radim\source\repos\hw5\task1\obj\Debug\task1.exe
-C:\Users\Radim\source\repos\hw5\task1\obj\Debug\task1.pdb
+C:\Users\Radim\source\repos\lesson6\task1\bin\Debug\task1.exe.config
+C:\Users\Radim\source\repos\lesson6\task1\bin\Debug\task1.exe
+C:\Users\Radim\source\repos\lesson6\task1\bin\Debug\task1.pdb
+C:\Users\Radim\source\repos\lesson6\task1\obj\Debug\task1.csproj.AssemblyReference.cache
+C:\Users\Radim\source\repos\lesson6\task1\obj\Debug\task1.csproj.SuggestedBindingRedirects.cache
+C:\Users\Radim\source\repos\lesson6\task1\obj\Debug\task1.csproj.CoreCompileInputs.cache
+C:\Users\Radim\source\repos\lesson6\task1\obj\Debug\task1.exe
+C:\Users\Radim\source\repos\lesson6\task1\obj\Debug\task1.pdb

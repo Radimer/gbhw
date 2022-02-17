@@ -1,54 +1,51 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Text.RegularExpressions;
 
-namespace hw5
+public delegate double Fun(double a, double x);
+
+class Program
 {
-    internal class Program
+    public static void Table(Fun F, double a, double x, double b)
     {
-        static void Main(string[] args)
+        Console.WriteLine("----- X ----- Y -----");
+        while (x <= b)
         {
-            Console.Title = "Проверка кооретного пароля";
-
-
-            Console.WriteLine(@"Введите пароль соответствующий следуюшим параметрам 
-    1.Длинна строки от 2 до 10 символов
-    2.Сожержит толко буквы латинского алфавита или цифры
-    3.Цифра не должна быть первым символом");
-            char[] inputString = Console.ReadLine().ToCharArray();
-
-            bool[] condition = { true, true, true };
-
-            if (2 > inputString.Length || inputString.Length > 10) condition[0] = false;
-
-            int asciiFirst = inputString[0];
-            if (asciiFirst < 65 || asciiFirst > 90 && asciiFirst < 97 || asciiFirst > 122) condition[2] = false;
-
-            for (int i = 0; i < inputString.Length; i++)
-            {
-                int asciin = inputString[i];
-                if ((asciin < 48 || asciin > 58 && asciin < 65 || (asciin > 90 && asciin < 97) || asciin > 122)) condition[1] = false;
-            }
-
-            if (condition[0] && condition[1] && condition[2]) Console.WriteLine($"Введенный пароль соответствует всем условиям");
-            else Console.WriteLine($"Введенный пароль не соответствует{(condition[0] ? "" : " первому")}{(condition[1] ? "" : " второму")}{(condition[2] ? "" : " третьему")} условиям");
-            Console.ReadLine();
-            Console.Clear();
-
-
-            Regex myReg = new Regex(@"^[A-Za-z][A-Za-z0-9]{1,9}");
-            Console.WriteLine(@"Введите пароль соответствующий следуюшим параметрам 
-    1.Длинна строки от 2 до 10 символов
-    2.Сожержит толко буквы латинского алфавита или цифры
-    3.Цифра не должна быть первым символом");
-            string inputString2 = Console.ReadLine();
-            if (myReg.IsMatch(inputString2)) Console.WriteLine($"Введенный пароль соответствует всем условиям");
-            else Console.WriteLine($"Введенный пароль не соответствует условиям");
-            Console.ReadLine();
-            Console.Clear();
+            Console.WriteLine("| {0,8:0.000} | {1,8:0.000} |", x, F(a, x));
+            x += 1;
         }
+        Console.WriteLine("---------------------");
+    }
+
+    public static double MyFunc(double x)
+    {
+        return x * x * x;
+    }
+
+    public static double FunctionOne(double a, double x)
+    {
+        return a * x * x;
+    }
+
+    public static double FunctionTwo(double a, double x)
+    {
+        return a * Math.Sin(x);
+    }
+
+    static void Main()
+    {
+        Console.Title = "Таблица функций a*x^2 и a*sin(x)";
+
+        Console.WriteLine("Введите a, x и b через пробел:");
+        string[] insert = Console.ReadLine().Split(' ');
+        double a = double.Parse(insert[0]);
+        double x = double.Parse(insert[1]);
+        double b = double.Parse(insert[2]);
+
+        Console.WriteLine("Функция a*x^2");
+        Table(new Fun(FunctionOne), a, x, b);
+        Console.WriteLine("Функция a*sin(x)");
+        Table(new Fun(FunctionTwo), a, x, b);
+
+
+        Console.ReadLine();
     }
 }
