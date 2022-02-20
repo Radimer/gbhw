@@ -1,0 +1,10 @@
+C:\Users\Radim\source\repos\lesson8\task4\bin\Debug\task4.exe.config
+C:\Users\Radim\source\repos\lesson8\task4\bin\Debug\task4.exe
+C:\Users\Radim\source\repos\lesson8\task4\bin\Debug\task4.pdb
+C:\Users\Radim\source\repos\lesson8\task4\obj\Debug\task4.csproj.SuggestedBindingRedirects.cache
+C:\Users\Radim\source\repos\lesson8\task4\obj\Debug\task4.Form1.resources
+C:\Users\Radim\source\repos\lesson8\task4\obj\Debug\task4.Properties.Resources.resources
+C:\Users\Radim\source\repos\lesson8\task4\obj\Debug\task4.csproj.GenerateResource.cache
+C:\Users\Radim\source\repos\lesson8\task4\obj\Debug\task4.csproj.CoreCompileInputs.cache
+C:\Users\Radim\source\repos\lesson8\task4\obj\Debug\task4.exe
+C:\Users\Radim\source\repos\lesson8\task4\obj\Debug\task4.pdb
