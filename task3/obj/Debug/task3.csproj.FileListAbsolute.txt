@@ -1,0 +1,10 @@
+C:\Users\Radim\source\repos\lesson8\task3\bin\Debug\task3.exe.config
+C:\Users\Radim\source\repos\lesson8\task3\bin\Debug\task3.exe
+C:\Users\Radim\source\repos\lesson8\task3\bin\Debug\task3.pdb
+C:\Users\Radim\source\repos\lesson8\task3\obj\Debug\task3.csproj.AssemblyReference.cache
+C:\Users\Radim\source\repos\lesson8\task3\obj\Debug\task3.csproj.SuggestedBindingRedirects.cache
+C:\Users\Radim\source\repos\lesson8\task3\obj\Debug\task3.Properties.Resources.resources
+C:\Users\Radim\source\repos\lesson8\task3\obj\Debug\task3.csproj.GenerateResource.cache
+C:\Users\Radim\source\repos\lesson8\task3\obj\Debug\task3.csproj.CoreCompileInputs.cache
+C:\Users\Radim\source\repos\lesson8\task3\obj\Debug\task3.exe
+C:\Users\Radim\source\repos\lesson8\task3\obj\Debug\task3.pdb
